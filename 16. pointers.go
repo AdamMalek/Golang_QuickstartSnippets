@@ -8,8 +8,8 @@ func main() {
 
 	// 2 ways of defining pointer
 	// var ptr *int = &i
-	// ptr2 := &i
-	var ptr *int = &i
+	// var ptr3 *int = new(int)
+	var ptr *int = new(int)
 
 	fmt.Println("Initial value", i)
 	fmt.Println("Variable address", ptr)

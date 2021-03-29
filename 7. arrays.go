@@ -10,25 +10,8 @@ func main() {
 
 	var c [3][3]int = [3][3]int{[3]int{4, 5}, [3]int{6, 7, 8}}
 
-	fmt.Println("range")
-	for i, t := range c {
-		fmt.Printf("Table %d\n", i)
-		for _, item := range t {
-			fmt.Print(item, " ")
-		}
-		fmt.Println()
-	}
-
 	fmt.Println("fmt.Println")
 	fmt.Println(c)
-
-	for i, t := range c {
-		fmt.Printf("Table %d\n", i)
-		for _, item := range t {
-			fmt.Print(item, " ")
-		}
-		fmt.Println()
-	}
 
 	fmt.Println("for len")
 	for i := 0; i < len(c); i++ {

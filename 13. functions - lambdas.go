@@ -27,8 +27,8 @@ func main() {
 	multiplyBy2 := functionReturningFunction(2)
 	multiplyBy3 := functionReturningFunction(3)
 
-	fmt.Print("15 multiplied by 2 is", multiplyBy2(15))
-	fmt.Print("15 multiplied by 3 is", multiplyBy3(15))
+	fmt.Println("15 multiplied by 2 is", multiplyBy2(15))
+	fmt.Println("15 multiplied by 3 is", multiplyBy3(15))
 }
 
 func functionUsingPassedFunction(number int, formatter func(int) string) {
