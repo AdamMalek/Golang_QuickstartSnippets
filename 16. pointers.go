@@ -9,10 +9,16 @@ func main() {
 	// 2 ways of defining pointer
 	// var ptr *int = &i
 	// var ptr3 *int = new(int)
-	var ptr *int = new(int)
+	ptr := &i
 
 	fmt.Println("Initial value", i)
 	fmt.Println("Variable address", ptr)
+	var pointerToPointer **int = &ptr
+	fmt.Println("Pointer address", &ptr)
+	fmt.Println("Pointer to pointer value", pointerToPointer)
+	fmt.Println("Pointer to pointer value after *", *pointerToPointer)
+	fmt.Println("Pointer to pointer value after **", **pointerToPointer)
+
 	modifyByValue(i)
 	fmt.Println("After passing variable by value it does not change", i)
 	modifyByPointer(ptr)
