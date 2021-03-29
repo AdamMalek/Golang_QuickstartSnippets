@@ -7,6 +7,9 @@ func main() {
 	res := SumNumbersUpTo(15)
 	fmt.Println("Sum up to 15 is", res)
 
+	res2 := SumNumbersUpToRecursive(15)
+	fmt.Println("Sum (recursive) up to 15 is", res2)
+
 	pow2, pow3, pow4, pow5 := GetPowers(4)
 	fmt.Println("Powers of 4:", pow2, pow3, pow4, pow5)
 }
@@ -25,6 +28,13 @@ func SumNumbersUpTo(maxNumber int) int {
 		sum += i
 	}
 	return sum
+}
+
+func SumNumbersUpToRecursive(maxNumber int) int {
+	if maxNumber == 0 {
+		return 0
+	}
+	return maxNumber + SumNumbersUpToRecursive(maxNumber-1)
 }
 
 // multiple return values (tuple)
