@@ -2,7 +2,19 @@ package main
 
 import "fmt"
 
-// Structs containing function with same signature
+// Interface - grouping of methods with given name, in this example common function for both structs
+type ilogger interface {
+	log(msg string, isError bool)
+}
+
+func logInfo(logger ilogger, msg string) {
+	logger.log(msg, false)
+}
+func logError(logger ilogger, msg string) {
+	logger.log(msg, true)
+}
+
+// Structs containing function with same signature, matching ilogger interface
 type fileLogger struct {
 	filePath string
 }
@@ -51,16 +63,4 @@ func main() {
 	for _, logger := range loggers {
 		logger.log("Message from loop", false)
 	}
-}
-
-// Interface - grouping of methods with given name, in this example common function for both structs
-type ilogger interface {
-	log(msg string, isError bool)
-}
-
-func logInfo(logger ilogger, msg string) {
-	logger.log(msg, false)
-}
-func logError(logger ilogger, msg string) {
-	logger.log(msg, true)
 }
