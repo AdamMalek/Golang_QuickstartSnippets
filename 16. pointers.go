@@ -20,7 +20,7 @@ func main() {
 	fmt.Println("Pointer to pointer value after **", **pointerToPointer)
 
 	modifyByValue(i)
-	fmt.Println("After passing variable by value it does not change", i)
+	fmt.Println("After passing variable by value it does not change, because object is copied", i)
 	modifyByPointer(ptr)
 	fmt.Println("After passing variable by pointer it does change", i)
 
